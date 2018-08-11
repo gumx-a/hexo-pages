@@ -1,7 +1,7 @@
 ---
 title: JDK下载连接
-date: 2018-02-22 15:29:00
-categories: ['服务端']
+date: 2018-02-22 15:29:04
+categories: ['后端']
 tags: ['Java']
 ---
 

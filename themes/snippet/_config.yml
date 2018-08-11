@@ -20,8 +20,8 @@ menu:
 - page: 工具
   url: /categories/工具/
   icon:
-- page: 服务端
-  url: /categories/服务端/
+- page: 服务器
+  url: /categories/服务器/
   icon:
 - page: 时间轴
   url: /archives/
