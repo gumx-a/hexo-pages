@@ -72,7 +72,7 @@ jsonContent:
 social:
  - name: Github
    icon: git
-   href: //github.com/gumxm-a/
+   href: https://github.com/gumx-a/hexo-pages
  - name: 邮箱
    icon: envelope-o
    href: 2282869995@qq.com
