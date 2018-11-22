@@ -7,9 +7,16 @@ tags:
   - npm
 ---
 
+
+npm 中文文档： https://www.npmjs.com.cn/
+
 **安装cnpm**
 
-npm install -g cnpm --registry=https://registry.npm.taobao.org
+npm 淘宝镜像官网地址： https://npm.taobao.org/
+
+    
+    npm install -g cnpm --registry=https://registry.npm.taobao.org
+
 
 * * *
 
@@ -43,9 +50,44 @@ npm install -g cnpm --registry=https://registry.npm.taobao.org
 **搜索**
 
     cnpm search [package name]
-    
-    
+
+
+* * *
 
 **查看版本号列表**
 
     cnpm view [package name] viersions
+
+
+* * *
+
+**升级npm**
+
+    npm install -g npm
+
+
+* * *
+
+**升级包**
+
+    npm update [package name] //局部更新
+    npm update [package name] -g //全局更新
+
+
+或者通过指定版号重新安装来实现更新：
+
+    npm install [package name]@version 
+
+* * *
+
+**查看包版本号**
+
+    
+    npm --version
+
+
+**卸载全局/本地安装包**
+
+
+    npm uninstall  [packagename] //局部卸载
+    npm uninstall -g [packagename] //全局卸载
