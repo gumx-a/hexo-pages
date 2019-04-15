@@ -7,7 +7,7 @@ tags:
   - Nginx
 ---
 
----summary--- linux 下安装nginx，安装方式分为使用yum安装和源码包安装两种方式。对比两种安装方式，我选择了源码包安装的方式进行安装。简单记录下两种安装的区别于源码安装的方式。 ---summary---
+linux 下安装nginx，安装方式分为使用yum安装和源码包安装两种方式。对比两种安装方式，我选择了源码包安装的方式进行安装。简单记录下两种安装的区别于源码安装的方式。
 
 * * *
 
@@ -32,50 +32,48 @@ yum安装和源码包安装的区别
 
 **启用方式不同**
 
-*   yum 安装 nginx，我们可以通过 系统服务命令 service 来启动或停止
+* yum 安装 nginx，我们可以通过 系统服务命令 service 来启动或停止
 
-    # service nginx start #启动 nginx 服务
-    
-    # service nginx stop #停止 nginx 服务
-    
-    # service nginx restart #重启 nginx 服务
-    
-    
 
-*   源码安装nginx启动的时候不能使用service来启动，需要执行nginx安装目录下的sbin目录下的nginx可执行程序才行，
 
-    # cd nginx/sbin/
-    # ./nginx  启动
-    # ./nginx -s quit 停止
-    # ./nginx -s reload 刷新配置
-    
+  `service nginx start #启动 nginx 服务`
+  `service nginx stop #停止 nginx 服务`
+  `service nginx restart #重启 nginx 服务`
+
+
+
+* 源码安装nginx启动的时候不能使用service来启动，需要执行nginx安装目录下的sbin目录下的nginx可执行程序才行，
+
+
+
+  `cd nginx/sbin/
+  ./nginx  启动
+  ./nginx -s quit 停止
+  ./nginx -s reload 刷新配置`
+
 
 源码包 安装 nginx
 ------------
 
-1.  下载安装包
+1. 下载安装包
 
-    # wget http://nginx.org/download/nginx-1.5.9.tar.gz
-    
+   `wget http://nginx.org/download/nginx-1.5.9.tar.gz`
 
-1.  解压安装包
+1. 解压安装包
 
-    # tar -zxvf nginx-1.5.9.tar.gz
-    
+   `tar -zxvf nginx-1.5.9.tar.gz`
 
-1.  可能会缺少依赖库，所以先安装依赖库
+1. 可能会缺少依赖库，所以先安装依赖库
 
-    yum -y install pcre-devel
-    
-    yum -y install openssl openssl-devel
-    
-    
+   `yum -y install pcre-devel`
 
-1.  安装
+   `yum -y install openssl openssl-devel`
 
-    # ./configure --prefix=/usr/GMX/nginx --with-http_stub_status_module --with-http_realip_module  //编译
-    # make && make install //安装
-    
+1. 安装
+
+    `./configure --prefix=/usr/GMX/nginx --with-http_stub_status_module --with-http_realip_module  //编译`
+
+    `make && make install //安装`
 
 编译参数说明：nginx大部分常用模块，编译时./configure --help以--without开头的都默认安装。
 
@@ -88,18 +86,16 @@ yum安装和源码包安装的区别
     --with-http_stub_status_module ： 用来监控 Nginx 的当前状态
     --with-http_realip_module ： 通过这个模块允许我们改变客户端请求头中客户端IP地址值(例如X-Real-IP 或 X-Forwarded-For)，意义在于能够使得后台服务器记录原始客户端的IP地址
     --add-module=PATH ： 添加第三方外部模块，如nginx-sticky-module-ng或缓存模块。每次添加新的模块都要重新编译（Tengine可以在新加入module时无需重新编译）
-    
 
-1.  启动 nginx
 
-    # cd nginx/sbin/
-    # ./nginx 
-    
+1. 启动 nginx
 
-1.  停止
+   ``cd nginx/sbin/`
+   ./nginx` 
 
-    # ./nginx -s quit
-    
+1. 停止
+
+   `./nginx -s quit`
 
 两个问题： 1 安装nginx时， 还有gcc的依赖 2修改nginx.config文件中的 use nobody 为 use root，表示使用root用户的权限。才可以访问文件，否则会出现404 的问题。
 

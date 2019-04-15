@@ -1,6 +1,6 @@
 echo -----------------release upload ---------------
 
-scp -r public/  root@118.24.67.39:/www/wwwroot/gumx.top/public
+scp -r public/  root@118.24.67.39:/www/wwwroot/guxm_top/public
 
 echo ----------------------end----------------------
 

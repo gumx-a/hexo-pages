@@ -72,10 +72,10 @@ jsonContent:
 social:
  - name: Github
    icon: git
-   href: https://github.com/gumx-a/hexo-pages
+   href: https://github.com/gumx-a/notes
  - name: 邮箱
    icon: envelope-o
-   href: 2282869995@qq.com
+   href: mail@gumx.top
  # - name: 联系QQ
  #   icon: qq
  #   href: /
@@ -85,9 +85,9 @@ social:
  # - name: QQ群
  #   icon: users
  #   href: /
- # - name: RSS
- #   icon: feed
- #   href: /atom.xml
+ - name: MDN 镜像
+   icon: feed
+   href: http://mdn.gumx.top/zh-CN/
 
 ## 文章分类设置
 cate_config:
